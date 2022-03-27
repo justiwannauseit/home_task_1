@@ -8,7 +8,7 @@
 ### Install
 
 ```
-    git clone https://github.com/justiwannauseit/home_task_1
+    git clone https://github.com/justiwannauseit/home_task_1 
 ```
 
 ### Browsers

@@ -1,0 +1,7 @@
+# Project exclude paths
+/.idea/
+/target/
+/build/
+/out/
+/out/production/classes/
+/out/test/classes/

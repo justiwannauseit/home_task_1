@@ -11,8 +11,10 @@
     git clone https://github.com/justiwannauseit/home_task_1 
 ```
 
-### Browsers
+### Run in console
 
 ```
-    chrome | opera | firefox  
+    mvn test -Dbrowser=chrome -Dwebdriver.base.url=https://otus.ru
+    
+    Browsers: chrome | opera | firefox  
 ```

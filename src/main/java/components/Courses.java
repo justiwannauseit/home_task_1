@@ -1,6 +1,7 @@
 package components;
 
 import annotations.Component;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -61,7 +62,11 @@ public class Courses extends AnyComponentAbs<Courses> {
     }
 
     public Lessons clickIfContains(String value) {
-        WebElement element = driver.findElement(By.xpath(String.format(".//div[text()[contains(.,'%s')]]/ancestor::div[contains(@class, 'lessons__new-item-container')]", value)));
+        List<WebElement> elements = driver.findElements(By.xpath(String.format(".//div[text()[contains(.,'%s')]]/ancestor::div[contains(@class, 'lessons__new-item-container')]", value)));
+        WebElement element;
+        if (elements.size() > 1) {
+            element = elements.stream().reduce((first, second) -> Faker.instance().random().nextInt(0, 1) == 0 ? first : second).get();
+        } else element = elements.get(0);
         clickToCourse(element);
         return new Lessons(driver);
     }

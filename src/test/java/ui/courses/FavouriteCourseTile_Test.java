@@ -64,10 +64,21 @@ public class FavouriteCourseTile_Test {
     new MainPage(driver).open();
 
     String actualTitle = new Courses(driver)
-        .clickIfContains("Linux")
-        .getPageTitle();
+            .clickIfContains("Linux")
+            .getPageTitle();
 
     Assertions.assertEquals("Специализация Administrator Linux", actualTitle);
+  }
+
+  @Test
+  public void click_to_course_by_date() {
+    new MainPage(driver).open();
+
+    String actualTitle = new Courses(driver)
+            .clickIfContains("29 марта")
+            .getPageTitle();
+
+    Assertions.assertTrue(actualTitle.equals("Специализация С++") || actualTitle.equals("Специализация Android Developer"));
   }
 
 }

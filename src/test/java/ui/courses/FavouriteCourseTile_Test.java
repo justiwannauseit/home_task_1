@@ -67,7 +67,7 @@ public class FavouriteCourseTile_Test {
             .clickIfContains("Linux")
             .getPageTitle();
 
-    Assertions.assertEquals("Специализация Administrator Linux", actualTitle);
+    Assertions.assertTrue(actualTitle.equals("Специализация Administrator Linux") || actualTitle.equals("Специализация Network Engineer"));
   }
 
   @Test

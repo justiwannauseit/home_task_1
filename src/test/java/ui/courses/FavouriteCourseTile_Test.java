@@ -23,7 +23,7 @@ public class FavouriteCourseTile_Test {
             .clickToFirstCourseByDate()
             .getPageTitle();
 
-    Assertions.assertEquals("Нагрузочное тестирование. Инструменты и особенности процесса проведения нагрузочного тестирования", actualTitle);
+    Assertions.assertEquals("Unity Game Developer. Professional | OTUS", actualTitle);
   }
 
   @Test
@@ -45,7 +45,7 @@ public class FavouriteCourseTile_Test {
         .clickToFirstAlphabeticalElement()
         .getPageTitle();
 
-    Assertions.assertEquals("Архитектор высоких нагрузок. Лучшие практики по HighLoad и отказоустойчивости веб-приложений | OTUS", actualTitle);
+    Assertions.assertEquals("Scala-разработчик, программирование в Scala и самым мощным Scala-библиотекам", actualTitle);
   }
 
   @Test

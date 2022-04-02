@@ -5,6 +5,7 @@ import annotations.UrlPrefix;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import popups.Cookies;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -31,6 +32,7 @@ public abstract class BasePage<T> extends CommonActions<T> {
 
     public T open() {
         driver.get(getBaseUrl() + getUrlPrefix());
+        new Cookies(driver).clickToOkButton();
         return (T) this;
     }
 

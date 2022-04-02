@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.Date;
 import java.util.Locale;
 import java.util.regex.Matcher;
@@ -27,16 +29,16 @@ public class CustomDataFormatter {
         return string;
     }
 
-    public static Date StringDateToData(String value) {
+    public static Date stringDateToData(final String value) {
         try {
             return DATE_FORMAT.parse(value);
         } catch (ParseException ignore) {
             log.info("Value: " + value + " don't parsed");
-            return null;
+            return Date.from(LocalDateTime.of(2022, 12, 3, 12, 0).toInstant(ZoneOffset.MAX));
         }
     }
 
-    public static String DateToString(Date date) {
+    public static String dateToString(final Date date) {
         return DATE_FORMAT.format(date).replaceAll("31 декабря", "О дате старта будет объявлено позже");
     }
 
